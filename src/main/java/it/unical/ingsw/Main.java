@@ -3,6 +3,8 @@ package it.unical.ingsw;
 import okhttp3.OkHttpClient;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import java.util.Optional;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,6 +14,11 @@ public class Main {
             public User updateUser(User user) {
                 System.out.println("Fake user dao");
                 return user;
+            }
+
+            @Override
+            public Optional<User> findByUsername(String username) {
+                return Optional.empty();
             }
         };
         SecurityService secService = new SecurityService() {
