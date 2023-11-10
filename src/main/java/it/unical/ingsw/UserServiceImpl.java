@@ -26,4 +26,7 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    public Optional<User> findByUsername(String username) {
+        return userDao.findByUsername(username);
+    }
 }
